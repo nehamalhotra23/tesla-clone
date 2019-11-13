@@ -1,6 +1,11 @@
 import React from 'react';
-import Banner from './Banner';
-import Navbar from './Navbar';
+import Home from './Home';
+import Model3 from "./Model3";
+import ModelX from "./ModelX";
+import ModelS from "./ModelS";
+import ModelY from "./ModelY";
+import { Switch, Route } from 'react-router-dom';
+
 
 
 
@@ -8,8 +13,15 @@ import Navbar from './Navbar';
 function App(){
   return (
     <div>
-      <Navbar/>
-      <Banner/>
+      
+      <Switch>
+        <Route exact path="/" component={Home}/>
+        <Route exact path="/model3" component={Model3} />
+        <Route exact path="/modelX" component={ModelX} />
+        <Route exact path="/modelS" component={ModelS} />
+        <Route exact path="/modelY" component={ModelY} />
+      </Switch>
+      
       
     </div>
   );

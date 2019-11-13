@@ -1,64 +1,94 @@
 import React from "react";
+import { Link } from 'react-router-dom';
+
 
 function Navbar() {
-    return (
-        <div className="navMain">
-            <style jsx>{`
-         ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            z-index: 1;
-            position: absolute;
-            background-color: rgba(0, 0, 0, 0.5);
-            width: 100%;
-          }
-          
-          li {
-            float: right;
-          }
-          
-          li a {
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-            
-          }
-          
-          li a:hover {
-            background-color: #111;
-          }
-          .models{
-            margin-right: 32vmax;
-          }
-          .logo{
-              float: left;
-              margin-right: 50px;
-          }
-       
-         
-     
-    
-        `}</style>
-            
-            <ul>
-            
-                <li><a href="#contact">SHOP</a></li>
-                <li><a href="#about">SIGN IN</a></li>
-                <li className='logo'><a href="#about">TESLA</a></li>
-                
-                <li className="models"><a class="active" href="#home">MODEL S</a></li>
-                <li ><a href="#news">MODEL X</a></li>
-                <li ><a href="#contact">MODEL 3</a></li>
-                <li><a href="#about">MODEL Y</a></li>
-              
-               
-               
-            </ul>
 
-        </div>
-    );
+  var navigation = {
+    paddingTop: "30px",
+    paddingBottom: "30px",
+    position: 'absolute',
+    top: '0',
+    width: '100%',
+    zIndex: '1',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)'
+  };
+
+  var navbarRight = {
+    float: "right",
+    textDecoration: "none",
+    padding: "10px",
+    color: "#fff",
+    fontFamily: "Arial",
+    fontWeight: "900",
+    '&:hover': {
+      textDecoration: "underline"
+    }
+  };
+  var link = {
+    textDecoration: "none",
+    padding: "10px",
+    color: "#fff",
+    fontFamily: "Arial",
+    fontWeight: "900",
+    '&:hover': {
+      textDecoration: "underline"
+    }
+  };
+
+  var logo = {
+    paddingLeft: "2%",
+    fontFamily: "Arial",
+    fontSize: "30px",
+    fontWeight: "bold",
+    textDecoration: "none",
+    color: "#fff"
+  };
+
+  var center = {
+    textDecoration: "none",
+    padding: "10px",
+    color: "#fff",
+    fontFamily: "Arial",
+    fontWeight: "900",
+    '&:hover': {
+      textDecoration: "underline"
+    }
+  };
+  var modelX = {
+    textDecoration: "none",
+    padding: "10px",
+    color: "#fff",
+    fontFamily: "Arial",
+    fontWeight: "900",
+    marginLeft: '30vmax',
+    marginRight: 'auto',
+    '&:hover': {
+      textDecoration: "underline"
+    }
+  };
+  var navDiv = {
+    marginRight: '5%'
+  }
+
+  return (
+    <div style={navigation}>
+      <div className="header">
+        <nav>
+          <div style={navDiv}>
+            <Link to="/" style={logo}>TESLA </Link>
+            <Link to="/modelX" style={modelX}>Model X</Link>
+            <Link to="/modelY" style={center}>Model Y</Link>
+            <Link to="/modelS" style={center}>Model S</Link>
+            <Link to="/model3" style={center}>Model 3</Link>
+            <a style={navbarRight} href="#">SHOP</a>
+            <a style={navbarRight} href="#">SIGN IN</a>
+
+          </div>
+        </nav>
+      </div>
+    </div>
+
+  );
 }
 export default Navbar;

@@ -1,10 +1,10 @@
 import React from 'react';
 import { Player } from 'video-react';
 
-function Banner(){
-  return(
-   <div>
-    <style jsx>{`
+function Banner() {
+  return (
+    <div>
+      <style jsx>{`
     .video {
       z-index: -100;
       width:100%;
@@ -15,16 +15,14 @@ function Banner(){
       left:0;
     }
   `}</style>
-    <div className='video'>
-      <Player autoPlay loop muted>
-     
+      <div className='video'>
+        <Player autoPlay loop muted>
           <source type='video/webm' src="https://www.tesla.com/ns_videos/careers-video-071017.webm" />
-     
-    </Player>
-      
-    </div>
+        </Player>
+
+      </div>
     </div>
   );
-} 
+}
 
 export default Banner;
